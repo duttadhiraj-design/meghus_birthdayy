@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Meghuuuu! ❤️</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6e6;
+            /* Cute background pattern */
+            background-image: radial-gradient(#ffccd5 15%, transparent 16%), radial-gradient(#ffccd5 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* --- THE SLIDESHOW (iPhone Optimized) --- */
+        .frame {
+            position: relative;
+            width: 80vw;
+            height: 80vw;
+            max-width: 350px;
+            max-height: 350px;
+            border: 8px solid white;
+            border-bottom: 25px solid white; /* Polaroid look */
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            background: white;
+            margin-bottom: 20px;
+            transform: rotate(-2deg); /* Slight tilt for style */
+            z-index: 10;
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0;
+            border-radius: 2px;
+            animation: slideShow 12s infinite ease-in-out;
+        }
+
+        /* Timing for 3 photos */
+        .frame img:nth-child(1) { animation-delay: 0s; }
+        .frame img:nth-child(2) { animation-delay: 4s; }
+        .frame img:nth-child(3) { animation-delay: 8s; }
+
+        @keyframes slideShow {
+            0% { opacity: 0; } 10% { opacity: 1; } 33% { opacity: 1; } 43% { opacity: 0; } 100% { opacity: 0; }
+        }
+
+        /* --- BEATING HEART --- */
+        .heart-box { position: relative; margin-bottom: 15px; animation: float 3s ease-in-out infinite; }
+        .heart {
+            background-color: #ff4757; width: 50px; height: 50px; transform: rotate(-45deg);
+            animation: beat 0.8s infinite alternate; box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+        }
+        .heart::before, .heart::after {
+            content: ""; position: absolute; width: 50px; height: 50px; border-radius: 50%; background-color: #ff4757;
+        }
+        .heart::before { top: -25px; left: 0; }
+        .heart::after { left: 25px; top: 0; }
+
+        @keyframes beat { 0% { transform: rotate(-45deg) scale(1); } 100% { transform: rotate(-45deg) scale(1.1); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        /* --- TEXT --- */
+        .title {
+            font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #d63031; margin: 0;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.5); animation: fadeInUp 1.5s ease-out;
+        }
+        .subtitle {
+            font-size: 1rem; color: #e84393; margin-top: 5px; font-weight: 600;
+            background: rgba(255, 255, 255, 0.8); padding: 5px 15px; border-radius: 20px;
+            animation: fadeInUp 2s ease-out; margin-bottom: 20px;
+        }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- FLOATING BACKGROUND HEARTS --- */
+        .bg-heart {
+            position: absolute;
+            color: rgba(255, 100, 100, 0.3);
+            font-size: 20px;
+            animation: moveUp 10s linear infinite;
+            z-index: 1;
+        }
+        @keyframes moveUp { 0% { bottom: -10vh; opacity: 0; } 50% { opacity: 1; } 100% { bottom: 110vh; opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div class="bg-heart" style="left: 10%; animation-duration: 8s;">❤️</div>
+    <div class="bg-heart" style="left: 85%; animation-duration: 9s; font-size: 25px;">❤️</div>
+
+    <div class="frame">
+        <img src="p1.jpg.jpeg" alt="Us 1">
+        <img src="p2.jpg.jpeg" alt="Us 2">
+        <img src="p3.jpg.jpeg" alt="Us 3">
+    </div>
+
+    <div class="heart-box">
+        <div class="heart"></div>
+    </div>
+
+    <div class="text-area">
+        <h1 class="title">Happy Birthday Meghuuuu</h1>
+        <div class="subtitle">I Loveeeee You so muchhhhhh ❤️</div>
+    </div>
+
+</body>
+</html>
